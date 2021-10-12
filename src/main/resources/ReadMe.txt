@@ -1,0 +1,1 @@
+1.config/maven下对应maven文件配置，安装maven后替换配置文件
