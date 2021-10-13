@@ -163,4 +163,38 @@ public class Student implements Serializable {
     public void setUpdateTime(Date updateTime) {
         this.updateTime = updateTime;
     }
+
+
+    @ManyToOne(cascade = CascadeType.ALL,fetch = FetchType.LAZY)
+    @JoinColumn(name = "sid")
+    private Subjects subjects;
+
+    public Subjects getSubjects() {
+        return subjects;
+    }
+
+    public void setSubjects(Subjects subjects) {
+        this.subjects = subjects;
+    }
+
+    public Student(Subjects subjects) {
+        this.subjects = subjects;
+    }
+
+    @Override
+    public String toString() {
+        return "Student{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", gender=" + gender +
+                ", studentNo='" + studentNo + '\'' +
+                ", age=" + age +
+                ", createTime=" + createTime +
+                ", updateTime=" + updateTime +
+                ", subjects=" + subjects +
+                '}';
+    }
+
+    public Student() {
+    }
 }
