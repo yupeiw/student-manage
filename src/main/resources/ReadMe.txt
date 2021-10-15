@@ -14,8 +14,8 @@
        --manager Manager层，在dao层基础上进行查询
        --sql mybatis的数据查询语句(根据mybatis-generator-config.xml文件生成的)
          --custom 自定义mybatis的数据查询语句
-       --entity 项目实体类
-         --param 接口请求参数
-         --result 接口返回参数
-       --service service层
-       --util 帮助类
+     --entity 项目实体类
+       --param 接口请求参数
+       --result 接口返回参数
+     --service service层
+     --util 帮助类
