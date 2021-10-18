@@ -6,9 +6,10 @@
       WARNING - @mbg.generated
     -->
     <id column="id" jdbcType="BIGINT" property="id" />
-    <result column="name" jdbcType="VARCHAR" property="name" />
-    <result column="gender" jdbcType="INTEGER" property="gender" />
     <result column="student_no" jdbcType="VARCHAR" property="studentNo" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="card_no" jdbcType="VARCHAR" property="cardNo" />
+    <result column="gender" jdbcType="INTEGER" property="gender" />
     <result column="age" jdbcType="INTEGER" property="age" />
     <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
     <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
@@ -17,7 +18,7 @@
     <!--
       WARNING - @mbg.generated
     -->
-    id, `name`, gender, student_no, age, create_time, update_time
+    id, student_no, `name`, card_no, gender, age, create_time, update_time
   </sql>
   <resultMap id="BaseResultMap" type="com.person.student.manage.db.entity.Student">
     <id column="id" jdbcType="BIGINT" property="id" />

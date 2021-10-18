@@ -3,12 +3,12 @@ package com.person.student.manage.db.entity.custom;
 import com.person.student.manage.db.entity.Student;
 
 /**
- * CusStudent
+ * CustomStudent
  *
  * @author yupei
  * @date 2021/10/12 10:12
  */
-public class CusStudent extends Student {
+public class CustomStudent extends Student {
 
     public String getSex() {
         if (super.getGender() == null) {

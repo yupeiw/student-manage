@@ -6,10 +6,19 @@ import javax.persistence.*;
 
 @Table(name = "`student`")
 public class Student implements Serializable {
+    /**
+     * 学号
+     */
     @Id
     @Column(name = "`id`")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    /**
+     * 学号
+     */
+    @Column(name = "`student_no`")
+    private String studentNo;
 
     /**
      * 姓名
@@ -18,16 +27,16 @@ public class Student implements Serializable {
     private String name;
 
     /**
+     * 证件信息
+     */
+    @Column(name = "`card_no`")
+    private String cardNo;
+
+    /**
      * 性格：0:男 1:女
      */
     @Column(name = "`gender`")
     private Integer gender;
-
-    /**
-     * 学号
-     */
-    @Column(name = "`student_no`")
-    private String studentNo;
 
     /**
      * 年龄
@@ -47,17 +56,39 @@ public class Student implements Serializable {
     private static final long serialVersionUID = 1L;
 
     /**
-     * @return id
+     * 获取学号
+     *
+     * @return id - 学号
      */
     public Long getId() {
         return id;
     }
 
     /**
-     * @param id
+     * 设置学号
+     *
+     * @param id 学号
      */
     public void setId(Long id) {
         this.id = id;
+    }
+
+    /**
+     * 获取学号
+     *
+     * @return student_no - 学号
+     */
+    public String getStudentNo() {
+        return studentNo;
+    }
+
+    /**
+     * 设置学号
+     *
+     * @param studentNo 学号
+     */
+    public void setStudentNo(String studentNo) {
+        this.studentNo = studentNo == null ? null : studentNo.trim();
     }
 
     /**
@@ -79,6 +110,24 @@ public class Student implements Serializable {
     }
 
     /**
+     * 获取证件信息
+     *
+     * @return card_no - 证件信息
+     */
+    public String getCardNo() {
+        return cardNo;
+    }
+
+    /**
+     * 设置证件信息
+     *
+     * @param cardNo 证件信息
+     */
+    public void setCardNo(String cardNo) {
+        this.cardNo = cardNo == null ? null : cardNo.trim();
+    }
+
+    /**
      * 获取性格：0:男 1:女
      *
      * @return gender - 性格：0:男 1:女
@@ -94,24 +143,6 @@ public class Student implements Serializable {
      */
     public void setGender(Integer gender) {
         this.gender = gender;
-    }
-
-    /**
-     * 获取学号
-     *
-     * @return student_no - 学号
-     */
-    public String getStudentNo() {
-        return studentNo;
-    }
-
-    /**
-     * 设置学号
-     *
-     * @param studentNo 学号
-     */
-    public void setStudentNo(String studentNo) {
-        this.studentNo = studentNo == null ? null : studentNo.trim();
     }
 
     /**

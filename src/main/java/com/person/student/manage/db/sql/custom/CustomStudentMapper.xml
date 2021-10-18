@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.person.student.manage.db.dao.custom.CustomStudentMapper">
+
+    <resultMap id="customStudentMap" type="com.person.student.manage.db.entity.custom.CustomStudent"
+               extends="com.person.student.manage.db.dao.StudentMapper.BaseResultMap">
+    </resultMap>
+
+    <select id="selectById" parameterType="java.lang.Long"
+            resultType="com.person.student.manage.db.entity.custom.CustomStudent">
+        select
+        <include refid="com.person.student.manage.db.dao.StudentMapper.Base_Column_List"/>
+        from student
+        where id = #{id,jdbcType=BIGINT}
+    </select>
+
+    <select id="selectByStudentNo" parameterType="java.lang.String"
+            resultType="com.person.student.manage.db.entity.custom.CustomStudent">
+        select
+        <include refid="com.person.student.manage.db.dao.StudentMapper.Base_Column_List"/>
+        from student
+        where student_no = #{studentNo,jdbcType=VARCHAR}
+    </select>
+</mapper>
