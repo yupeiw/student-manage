@@ -14,7 +14,7 @@ import java.util.List;
 public interface CustomScoreMapper {
 
     /**
-     * 通过学号查询成绩
+     * 通过studentId查询成绩
      *
      * @param studentId
      * @return
