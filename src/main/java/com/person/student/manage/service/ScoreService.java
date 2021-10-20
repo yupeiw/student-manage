@@ -15,7 +15,7 @@ import java.util.List;
 public interface ScoreService {
 
     /**
-     * 通过证件号查询成绩
+     * 通过学号查询成绩
      *
      * @param param
      * @return
