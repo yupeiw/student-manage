@@ -40,9 +40,8 @@ public class ScoreServiceImpl implements ScoreService {
             throw new StudentManageException(PostCommonError.STUDENT_NOT_EXIST_ERROR);
         }
         List<CustomScore> customScoreList = customScoreMapper.selectByStudentId(customStudent.getStudentId());
-        List<ScoreResult> results = Lists.newArrayList();
         if (CollectionUtils.isEmpty(customScoreList)) {
-            return results;
+            return Lists.newArrayList();
         }
         return customScoreList.stream().map(this::buildScoreResult).collect(Collectors.toList());
     }
