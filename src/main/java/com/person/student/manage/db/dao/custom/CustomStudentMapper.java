@@ -13,10 +13,10 @@ public interface CustomStudentMapper {
     /**
      * 通过主键id查询学生信息
      *
-     * @param id
+     * @param studentId
      * @return
      */
-    CustomStudent selectById(@Param("id") Long id);
+    CustomStudent selectByStudentId(@Param("studentId") Long studentId);
 
     /**
      * 通过学号查询学生信息

@@ -5,7 +5,7 @@
     <!--
       WARNING - @mbg.generated
     -->
-    <id column="id" jdbcType="BIGINT" property="id" />
+    <id column="subject_id" jdbcType="BIGINT" property="subjectId" />
     <result column="subject_name" jdbcType="VARCHAR" property="subjectName" />
     <result column="teacher_name" jdbcType="VARCHAR" property="teacherName" />
     <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
@@ -15,6 +15,6 @@
     <!--
       WARNING - @mbg.generated
     -->
-    id, subject_name, teacher_name, create_time, update_time
+    subject_id, subject_name, teacher_name, create_time, update_time
   </sql>
 </mapper>

@@ -4,6 +4,7 @@ import com.google.common.collect.Lists;
 import com.person.student.manage.constant.PostCommonError;
 import com.person.student.manage.db.dao.custom.CustomScoreMapper;
 import com.person.student.manage.db.dao.custom.CustomStudentMapper;
+import com.person.student.manage.db.entity.Student;
 import com.person.student.manage.db.entity.Subject;
 import com.person.student.manage.db.entity.custom.CustomScore;
 import com.person.student.manage.db.entity.custom.CustomStudent;
@@ -34,11 +35,11 @@ public class ScoreServiceImpl implements ScoreService {
 
     @Override
     public List<ScoreResult> queryScoreByStudentNo(QueryScoreParam param) throws StudentManageException {
-        CustomStudent customStudent = customStudentMapper.selectByStudentNo(param.getStudentNo());
+        Student customStudent = customStudentMapper.selectByStudentNo(param.getStudentNo());
         if (customStudent == null) {
             throw new StudentManageException(PostCommonError.STUDENT_NOT_EXIST_ERROR);
         }
-        List<CustomScore> customScoreList = customScoreMapper.selectByStudentId(customStudent.getId());
+        List<CustomScore> customScoreList = customScoreMapper.selectByStudentId(customStudent.getStudentId());
         List<ScoreResult> results = Lists.newArrayList();
         if (CollectionUtils.isEmpty(customScoreList)) {
             return results;
@@ -58,7 +59,7 @@ public class ScoreServiceImpl implements ScoreService {
         }
         Subject subject = x.getSubject();
         if (subject != null) {
-            scoreResult.setStudentName(subject.getSubjectName());
+            scoreResult.setSubjectName(subject.getSubjectName());
             scoreResult.setTeacherName(subject.getTeacherName());
         }
         scoreResult.setScore(x.getScore());

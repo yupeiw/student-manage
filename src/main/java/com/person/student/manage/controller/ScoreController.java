@@ -25,7 +25,7 @@ public class ScoreController {
     private ScoreService scoreService;
 
     @PostMapping(value = "/score/query")
-    public Object queryScore(@RequestBody QueryScoreParam param) throws StudentManageException {
+    public Object queryScore(@RequestBody @Valid QueryScoreParam param) throws StudentManageException {
         return scoreService.queryScoreByStudentNo(param);
     }
 }

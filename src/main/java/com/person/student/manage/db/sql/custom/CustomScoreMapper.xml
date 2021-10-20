@@ -6,12 +6,12 @@
                extends="com.person.student.manage.db.dao.ScoreMapper.BaseResultMap">
         <collection property="student"
                     ofType="com.person.student.manage.db.entity.custom.CustomStudent"
-                    column="id"
-                    select="com.person.student.manage.db.dao.custom.CustomStudentMapper.selectById"/>
+                    column="student_id"
+                    select="com.person.student.manage.db.dao.custom.CustomStudentMapper.selectByStudentId"/>
         <collection property="subject"
                     ofType="com.person.student.manage.db.entity.Subject"
-                    column="id"
-                    select="com.person.student.manage.db.dao.custom.CustomSubjectMapper.selectById"/>
+                    column="subject_id"
+                    select="com.person.student.manage.db.dao.custom.CustomSubjectMapper.selectBySubjectId"/>
     </resultMap>
 
     <select id="selectByStudentId" parameterType="java.lang.Long"
@@ -19,7 +19,7 @@
         select
         <include refid="com.person.student.manage.db.dao.ScoreMapper.Base_Column_List"/>
         from score
-        where student_id = #{id}
+        where student_id = #{studentId}
     </select>
 
 </mapper>

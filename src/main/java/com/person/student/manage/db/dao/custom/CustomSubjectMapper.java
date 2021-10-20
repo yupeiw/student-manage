@@ -14,8 +14,8 @@ public interface CustomSubjectMapper {
     /**
      * 通过主键id查询学科信息
      *
-     * @param id
+     * @param subjectId
      * @return
      */
-    Subject selectById(@Param("id") Long id);
+    Subject selectBySubjectId(@Param("subjectId") Long subjectId);
 }

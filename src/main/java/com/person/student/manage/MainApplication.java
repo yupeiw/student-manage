@@ -1,22 +1,15 @@
 package com.person.student.manage;
 
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.core.JsonParser;
-import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.person.student.manage.util.JacksonUtil;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.commons.lang3.StringUtils;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.autoconfigure.web.HttpMessageConverters;
+import org.springframework.boot.autoconfigure.http.HttpMessageConverters;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 import tk.mybatis.spring.annotation.MapperScan;
-
-import java.text.SimpleDateFormat;
 
 /**
  * MainApplication
@@ -26,7 +19,6 @@ import java.text.SimpleDateFormat;
  **/
 @SpringBootApplication
 @EnableTransactionManagement
-//@ComponentScan(basePackages = "com.person.student.manage.db")
 @MapperScan(basePackages = "com.person.student.manage.db.dao")
 @Slf4j
 public class MainApplication {
@@ -38,6 +30,7 @@ public class MainApplication {
             throw e;
         }
     }
+
     /**
      * 注入Jackson转化器
      */

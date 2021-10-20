@@ -10,9 +10,8 @@ public class Subject implements Serializable {
      * 主键id
      */
     @Id
-    @Column(name = "`id`")
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    @Column(name = "`subject_id`")
+    private Long subjectId;
 
     /**
      * 学科名
@@ -43,19 +42,19 @@ public class Subject implements Serializable {
     /**
      * 获取主键id
      *
-     * @return id - 主键id
+     * @return subject_id - 主键id
      */
-    public Long getId() {
-        return id;
+    public Long getSubjectId() {
+        return subjectId;
     }
 
     /**
      * 设置主键id
      *
-     * @param id 主键id
+     * @param subjectId 主键id
      */
-    public void setId(Long id) {
-        this.id = id;
+    public void setSubjectId(Long subjectId) {
+        this.subjectId = subjectId;
     }
 
     /**

@@ -2,11 +2,11 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.person.student.manage.db.dao.custom.CustomSubjectMapper">
 
-    <select id="selectById" parameterType="java.lang.Long"
+    <select id="selectBySubjectId" parameterType="java.lang.Long"
             resultType="com.person.student.manage.db.entity.Subject">
         select
         <include refid="com.person.student.manage.db.dao.SubjectMapper.Base_Column_List"/>
         from subject
-        where id = #{id}
+        where subject_id = #{subjectId}
     </select>
 </mapper>

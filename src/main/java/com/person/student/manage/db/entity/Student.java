@@ -10,9 +10,8 @@ public class Student implements Serializable {
      * 学号
      */
     @Id
-    @Column(name = "`id`")
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    @Column(name = "`student_id`")
+    private Long studentId;
 
     /**
      * 学号
@@ -58,19 +57,19 @@ public class Student implements Serializable {
     /**
      * 获取学号
      *
-     * @return id - 学号
+     * @return student_id - 学号
      */
-    public Long getId() {
-        return id;
+    public Long getStudentId() {
+        return studentId;
     }
 
     /**
      * 设置学号
      *
-     * @param id 学号
+     * @param studentId 学号
      */
-    public void setId(Long id) {
-        this.id = id;
+    public void setStudentId(Long studentId) {
+        this.studentId = studentId;
     }
 
     /**
