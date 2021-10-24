@@ -1,1 +1,21 @@
 1.config/maven下对应maven文件配置，安装maven后替换配置文件
+2.项目结构
+--src/main/java
+   --com.person.student.manage
+     --aop 切面
+     --config Bean等相关配置
+     --constant 枚举、常量类
+     --controller 接口
+     --db 数据库相关
+       --dao dao层 (根据mybatis-generator-config.xml文件生成的)
+         --custom 自定义DAO
+       --entity 数据库实体类 (根据mybatis-generator-config.xml文件生成的)
+         --custom 数据库实体类封装，通常是继承数据库实体类，在数据库实体类基础上做一些简单的数据处理，可以直接作为数据库查询接收数据对象
+       --manager Manager层，在dao层基础上进行查询
+       --sql mybatis的数据查询语句(根据mybatis-generator-config.xml文件生成的)
+         --custom 自定义mybatis的数据查询语句
+     --entity 项目实体类
+       --param 接口请求参数
+       --result 接口返回参数
+     --service service层
+     --util 帮助类

@@ -25,13 +25,13 @@ import javax.servlet.http.HttpServletRequest;
 @Component
 public class ControllerAspect {
 
-    @Pointcut(value = "execution(* com.person.student.manage.controller.TestController.*(..))")
-    public void testPointCut() {
+    @Pointcut(value = "execution(* com.person.student.manage.controller.ScoreController.*(..))")
+    public void pointCut() {
         //point cut
     }
 
-    @Around(value = "testPointCut()")
-    public Object testAround(ProceedingJoinPoint joinPoint) throws Throwable {
+    @Around(value = "pointCut()")
+    public Object around(ProceedingJoinPoint joinPoint) throws Throwable {
         Object result;
         Object[] args = joinPoint.getArgs();
 

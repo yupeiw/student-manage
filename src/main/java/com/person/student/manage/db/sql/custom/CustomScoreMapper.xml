@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.person.student.manage.db.dao.custom.CustomScoreMapper">
+
+    <resultMap id="customScoreMap" type="com.person.student.manage.db.entity.custom.CustomScore"
+               extends="com.person.student.manage.db.dao.ScoreMapper.BaseResultMap">
+        <collection property="student"
+                    ofType="com.person.student.manage.db.entity.custom.CustomStudent"
+                    column="student_id"
+                    select="com.person.student.manage.db.dao.custom.CustomStudentMapper.selectByStudentId"/>
+        <collection property="subject"
+                    ofType="com.person.student.manage.db.entity.Subject"
+                    column="subject_id"
+                    select="com.person.student.manage.db.dao.custom.CustomSubjectMapper.selectBySubjectId"/>
+    </resultMap>
+
+    <select id="selectByStudentId" parameterType="java.lang.Long"
+            resultMap="customScoreMap">
+        select
+        <include refid="com.person.student.manage.db.dao.ScoreMapper.Base_Column_List"/>
+        from score
+        where student_id = #{studentId}
+    </select>
+
+</mapper>
