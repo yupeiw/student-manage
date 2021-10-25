@@ -17,6 +17,7 @@
 //@RunWith(SpringRunner.class)
 //@SpringBootTest(classes = MainApplication.class)
 //@Slf4j
+
 //public class CommonTest {
 //    @Resource(name = "flightPostDataSource")
 //    private DruidDataSource flightPostDataSource;
